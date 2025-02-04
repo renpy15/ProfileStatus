@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        
+        body {
+            background: #121212;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            opacity: 0;
+            animation: fadeIn 1s ease-in forwards;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        
+        .profile-container {
+            width: 600px;
+            background: #1c1c1c;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            overflow: hidden;
+            transform: translateY(-20px);
+            animation: slideIn 0.8s ease-out forwards;
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .tabs {
+            display: flex;
+            border-bottom: 2px solid #333;
+        }
+        .tab {
+            flex: 1;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+        .tab.active {
+            background: #d32f2f;
+        }
+        
+        .content {
+            padding: 20px;
+            display: none;
+            opacity: 0;
+            transform: scale(0.95);
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+
+        .content.active {
+            display: block;
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .cover {
+            width: 100%;
+            height: 150px;
+            background: url('https://i.pinimg.com/736x/ad/30/4c/ad304c4d3238e61b6265fba662c0b9eb.jpg') no-repeat center center/cover;
+            border-radius: 5px;
+            animation: fadeIn 1s ease-in forwards;
+        }
+
+        .profile-pic {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 4px solid #1c1c1c;
+            margin-top: -50px;
+            transition: transform 0.3s ease-in-out;
+            opacity: 0;
+            animation: fadeIn 1s ease-in 0.5s forwards;
+        }
+
+        .profile-pic:hover {
+            transform: scale(1.1);
+        }
+
+        .bio {
+            text-align: center;
+            font-size: 14px;
+            color: #bbb;
+            margin-top: 10px;
+        }
+
+        .social-icons {
+            text-align: center;
+            margin-top: 10px;
+            opacity: 0;
+            animation: fadeIn 1s ease-in 0.7s forwards;
+        }
+
+        .social-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 20px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #d32f2f;
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <div class="tabs">
+            <div class="tab active" onclick="showTab(0)">Profile</div>
+            <div class="tab" onclick="showTab(1)">Playlist</div>
+            <div class="tab" onclick="showTab(2)">Activity</div>
+        </div>
+        <div class="content active">
+            <div class="cover"></div>
+            <img src="https://i.pinimg.com/736x/ff/ca/87/ffca876ef17f43fe178f4f7e52edf72f.jpg" alt="Profile Picture" class="profile-pic">
+            <h2 style="color: gray;">renpy</h2>
+            <p class="bio">Hello po, i have ADHD!!!!!! i cant afford domain so i have to use this one.</p>
+            <p class="bio">| 15 Yr olds, HTML, CSS, and LuaU |</p>
+            <div class="social-icons">
+                <a href="https://x.com/renpyX" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/tapn_exclvs/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://github.com/renpy15" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+        <div class="content">
+            <h3>Playlist</h3>
+            <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" 
+                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/355413347&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
+            </iframe>
+            <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+                <a href="https://soundcloud.com/liluzivert" title="Lil Uzi Vert" target="_blank" style="color: #cccccc; text-decoration: none;">Lil Uzi Vert</a> · 
+                <a href="https://soundcloud.com/liluzivert/20-min-1" title="20 Min" target="_blank" style="color: #cccccc; text-decoration: none;">20 Min</a>
+            </div>
+            <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" 
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/655531008&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
+            </iframe>
+            <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+                <a href="https://soundcloud.com/blackmayo" title="Blackmayo" target="_blank" style="color: #cccccc; text-decoration: none;">Blackmayo</a> · 
+                <a href="https://soundcloud.com/blackmayo/jus-know" title="Jus Know" target="_blank" style="color: #cccccc; text-decoration: none;">Jus Know</a>
+            </div>
+        </div>
+        
+        <div class="content">
+            <h3>Activity</h3>
+            <p>Recent activity will be shown here.</p>
+        </div>
+    </div>
+    
+    <script>
+        function showTab(index) {
+            let tabs = document.querySelectorAll('.tab');
+            let contents = document.querySelectorAll('.content');
+            
+            tabs.forEach((tab, i) => {
+                tab.classList.toggle('active', i === index);
+            });
+
+            contents.forEach((content, i) => {
+                if (i === index) {
+                    content.classList.add('active');
+                } else {
+                    content.classList.remove('active');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
